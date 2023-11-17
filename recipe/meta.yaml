@@ -1,18 +1,18 @@
 {% set name = "sigpy" %}
-{% set version = "0.1.25" %}
+{% set version = "0.1.26" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/mikgroup/sigpy/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e810d044eab57642ad48ee9ff56ddeb60544a8b17ceb242345b44c5429ef02a8
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 37fdc159129b6a18b44d6bee43106561d1b031343660c4168f362a91f1b49367
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
 
 requirements:
   host:
