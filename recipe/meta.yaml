@@ -6,17 +6,17 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 37fdc159129b6a18b44d6bee43106561d1b031343660c4168f362a91f1b49367
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - numpy <=1.20
     - pywavelets
@@ -24,7 +24,7 @@ requirements:
     - scipy
     - tqdm
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy <=1.20
     - pywavelets
     - numba
@@ -43,6 +43,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
 
 about:
   home: http://github.com/mikgroup/sigpy
