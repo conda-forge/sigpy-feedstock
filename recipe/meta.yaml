@@ -21,14 +21,14 @@ requirements:
     - numpy <2
     - pywavelets
     - numba
-    - scipy
+    - scipy <1.12
     - tqdm
   run:
     - python >={{ python_min }}
     - numpy <2
     - pywavelets
     - numba
-    - scipy
+    - scipy <1.12
     - tqdm
 
 test:
