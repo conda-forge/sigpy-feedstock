@@ -18,17 +18,17 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - numpy <2
+    - numpy
     - pywavelets
     - numba
-    - scipy <1.12
+    - scipy
     - tqdm
   run:
     - python >={{ python_min }}
-    - numpy <2
+    - numpy
     - pywavelets
     - numba
-    - scipy <1.12
+    - scipy
     - tqdm
 
 test:
